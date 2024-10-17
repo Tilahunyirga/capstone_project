@@ -17,10 +17,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import redirect
+from products.views import UserDetailView,UserListCreateView
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('products', include('products.urls')),
+    path('api/token', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh', TokenRefreshView.as_view(), name='token_refresh'),
     path('', lambda request: redirect('product-list')),  # Redirect to the product list
+    path('users', UserListCreateView.as_view(), name='user-list-create'),  # List and create users
+    path('users/<int:pk>', UserDetailView.as_view(), name='user-detail'),  # Retrieve, update, delete users
     
 ]

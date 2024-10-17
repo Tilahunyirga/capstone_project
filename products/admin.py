@@ -9,3 +9,5 @@ class productAdmin(admin.ModelAdmin):
 
 admin.site.register(Product, productAdmin)
 
+
+

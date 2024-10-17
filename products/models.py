@@ -1,6 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
-# Create your models here.
+# Create your models ,product model
 
 
 class Product(models.Model): 
@@ -11,9 +12,22 @@ class Product(models.Model):
   stock_quantity = models.IntegerField()
   image_url = models.URLField(max_length=200)
   created_date = models.DateTimeField(auto_now=True)
- 
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
-from django.db import models
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# user model part
 
 class MyUserManager(BaseUserManager):
     def create_user(self, email, username, password=None):
