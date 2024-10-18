@@ -28,7 +28,7 @@ if path not in sys.path:
 os.environ['DJANGO_SETTINGS_MODULE'] = 'capstone_project.settings'
 
 # Activate the virtual environment
-activate_env = '/home/yourusername/.virtualenvs/capstone_env/bin/activate_this.py'
+activate_env = '/home/Tilahunyirga/.virtualenvs/capstone_env/bin/activate_this.py'
 with open(activate_env) as f:
     exec(f.read(), dict(__file__=activate_env))
 
